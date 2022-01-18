@@ -28,7 +28,7 @@ jobs:
       - name: Get Files
         run: |
           export THEME="`cat users/${{ github.actor }}.json | jq .theme | sed 's/"//g'`.css"
-          rm -r docs # just to make sure everything goes smoothly
+          rm -rf docs # just to make sure everything goes smoothly
           mkdir -p docs
           mkdir -p docs/themes
           cp themes/$THEME docs/themes/$THEME
